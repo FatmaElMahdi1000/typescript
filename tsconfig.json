@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    /* Environment & Modules */
+    // Sets the ECMAScript target version for the output JavaScript code
+    "target": "ES2023",
+
+    // Specifies the module code generation format (uses modern import/export syntax)
+    "module": "esnext",
+
+    // Configures how modules are resolved, optimized for modern tools and bundlers
+    "moduleResolution": "bundler",
+
+    // Automatically includes global type definitions for Node.js
+    "types": ["node"],
+
+    // Enables smooth interoperability between CommonJS and ES Modules
+    "esModuleInterop": true,
+
+    // Forces TypeScript to treat files as modules even if they lack import/export keywords
+    "moduleDetection": "force",
+
+    /* Directories */
+    // Specifies the folder where your source code (.ts files) lives
+    "rootDir": "./src",
+
+    // Specifies the target folder where compiled JavaScript files (.js) will be saved
+    "outDir": "./dist",
+
+    /* Output Settings */
+    // Prevents generating output files if any type-checking errors are found
+    "noEmitOnError": true,
+
+    // Generates source map files (.js.map) to help debug your TypeScript code directly
+    "sourceMap": true,
+
+    // Generates TypeScript type declaration files (.d.ts) for your code
+    "declaration": true,
+
+    // Generates source maps for the type declaration files
+    "declarationMap": true,
+
+    /* Strictness & Quality */
+    // Enables all strict type-checking options for maximum safety and predictability
+    "strict": true,
+
+    // Automatically adds 'undefined' to the type when accessing object/array keys or indices
+    "noUncheckedIndexedAccess": true,
+
+    // Disallows explicitly assigning 'undefined' to optional properties unless specified
+    "exactOptionalPropertyTypes": true,
+
+    // Ensures each file can be safely transpiled independently by modern tools
+    "isolatedModules": true,
+
+    // Skips type-checking of external declaration files (.d.ts) to speed up build times
+    "skipLibCheck": true
+  },
+
+  // Tells TypeScript which files and folders to include in the compilation process
+  "include": [
+    "src/**/*",
+    "drizzle.config.ts"
+  ]
+}
