@@ -82,6 +82,9 @@
 //
 //
 //
+import * as readline from 'readline/promises';
+import {stdin as input,stdout as output } from 'process';
+
 
 let pizzas: any[]=
     [{Name: "Sausage", price: 25}, {Name: "Veggie", price: 20},
@@ -132,3 +135,41 @@ const pizza2: newPizzaStructure =
 
 console.log(pizza2)
 
+
+///     let pizzas: any[]=
+//     [{Name: "Sausage", price: 25}, {Name: "Veggie", price: 20},
+//     {Name: "Hawaiian", price: 10}]
+
+
+//takes new pizza object and add it to the menu:
+//get the user add an input:
+    //() =>: return
+
+
+
+//Return type of async function must be promise:
+
+//an object of the interface:
+const NewPizza: newPizzaStructure =
+    {
+        Name: "",
+        price: 0
+    }
+
+//set return type to Promise<void>)
+async function addingNewPizza(NewPizza: newPizzaStructure,pizzas: any[] ):  Promise<void>
+    {
+        const rl = readline.createInterface({input, output});
+        const answer1 = await rl.question('please enter the new Pizza Name: ');
+        NewPizza.Name = answer1;
+
+        const answer2 = await rl.question('please enter the price in USD: ');
+
+        NewPizza.price = Number(answer2);
+        pizzas.push(NewPizza);
+
+        console.log(pizzas[pizzas.length -1]);
+
+        rl.close();
+    }
+addingNewPizza(NewPizza,pizzas)
